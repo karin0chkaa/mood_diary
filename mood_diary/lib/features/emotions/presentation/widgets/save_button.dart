@@ -20,8 +20,8 @@ class SaveButton extends StatelessWidget {
         minimumSize: const Size(335, 44),
         padding: EdgeInsets.zero,
         backgroundColor: isEnable
-          ? AppColors.primaryButtonColor
-          : AppColors.secondaryButtonColor,
+          ? AppColors.accentColor
+          : AppColors.surfaceColor,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(69)),
       ),
       child: Text(
@@ -30,8 +30,8 @@ class SaveButton extends StatelessWidget {
           fontSize: 20,
           fontWeight: FontWeight.w400,
           color: isEnable
-              ? AppColors.textButtonColor
-              : AppColors.textPrimaryColor,
+              ? AppColors.textOnAccentColor
+              : AppColors.textSecondaryColor,
         ),
       ),
     );

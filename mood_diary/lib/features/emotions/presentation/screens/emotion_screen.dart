@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
-import 'package:mood_diary/core/emotion/emotion.dart';
-import 'package:mood_diary/core/emotion/emotion_details.dart';
-import 'package:mood_diary/presentation/widgets/emotion_carousel.dart';
-import 'package:mood_diary/presentation/widgets/emotion_tag.dart';
-import 'package:mood_diary/presentation/widgets/labeled_slider.dart';
-import 'package:mood_diary/presentation/widgets/notes_field.dart';
-import 'package:mood_diary/presentation/widgets/save_button.dart';
+import 'package:mood_diary/features/emotions/domain/emotion.dart';
+import 'package:mood_diary/features/emotions/domain/emotion_details.dart';
+import 'package:mood_diary/features/emotions/presentation/widgets/emotion_carousel.dart';
+import 'package:mood_diary/features/emotions/presentation/widgets/emotion_tag.dart';
+import 'package:mood_diary/features/emotions/presentation/widgets/labeled_slider.dart';
+import 'package:mood_diary/features/emotions/presentation/widgets/notes_field.dart';
+import 'package:mood_diary/features/emotions/presentation/widgets/save_button.dart';
 
-class MoodContent extends StatefulWidget {
-  const MoodContent({super.key});
+class EmotionScreen extends StatefulWidget {
+  const EmotionScreen({super.key});
 
   @override
-  State<MoodContent> createState() => _MoodContentState();
+  State<EmotionScreen> createState() => _EmotionScreenContent();
 }
 
-class _MoodContentState extends State<MoodContent> {
+class _EmotionScreenContent extends State<EmotionScreen> {
   Emotion? _selectedEmotion;
   final List<Emotion> _emotions = Emotion.values;
   final TextEditingController notesController = TextEditingController();
@@ -22,6 +22,9 @@ class _MoodContentState extends State<MoodContent> {
 
   double _stressLevel = 50;
   double _selfEsteem = 50;
+
+  bool _stressTouched = false;
+  bool _selfEsteemTouched = false;
 
   @override
   void initState() {
@@ -40,7 +43,7 @@ class _MoodContentState extends State<MoodContent> {
   bool get _isFormValid {
     return _selectedEmotion != null &&
         notesController.text.trim().isNotEmpty &&
-        (_stressLevel != 50 && _selfEsteem != 50);
+        (_stressTouched || _selfEsteemTouched);
   }
 
   @override
@@ -105,6 +108,7 @@ class _MoodContentState extends State<MoodContent> {
                 onChanged: (value) {
                   setState(() {
                     _stressLevel = value;
+                    _stressTouched = true;
                   });
                 },
                 leftLabel: 'Низкий',
@@ -119,6 +123,7 @@ class _MoodContentState extends State<MoodContent> {
                 onChanged: (value) {
                   setState(() {
                     _selfEsteem = value;
+                    _selfEsteemTouched = true;
                   });
                 },
                 leftLabel: 'Неуверенность',

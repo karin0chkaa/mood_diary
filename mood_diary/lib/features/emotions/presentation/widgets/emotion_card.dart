@@ -24,10 +24,10 @@ class EmotionCard extends StatelessWidget {
         width: 118,
         height: 83,
         decoration: BoxDecoration(
-          color: AppColors.textButtonColor,
+          color: AppColors.textOnAccentColor,
           borderRadius: BorderRadius.circular(74),
           border: isSelected
-              ? Border.all(color: AppColors.primaryButtonColor, width: 3)
+              ? Border.all(color: AppColors.accentColor, width: 3)
               : Border.all(color: Colors.transparent, width: 3),
           boxShadow: [
             BoxShadow(
@@ -53,8 +53,8 @@ class EmotionCard extends StatelessWidget {
                 fontSize: 11,
                 fontWeight: FontWeight.w400,
                 color: isSelected
-                    ? AppColors.primaryButtonColor
-                    : AppColors.textSecondaryColor,
+                    ? AppColors.accentColor
+                    : AppColors.textPrimaryColor,
               ),
             ),
           ],

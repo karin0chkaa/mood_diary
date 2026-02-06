@@ -85,7 +85,7 @@ class LabeledSlider extends StatelessWidget {
                             child: Container(
                               width: 2,
                               height: 8,
-                              color: AppColors.textPrimaryColor.withOpacity(
+                              color: AppColors.textSecondaryColor.withOpacity(
                                 0.6,
                               ),
                             ),
@@ -157,7 +157,7 @@ class _TrackPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     final active = Paint()
-      ..color = AppColors.primaryButtonColor
+      ..color = AppColors.accentColor
       ..strokeWidth = 4
       ..strokeCap = StrokeCap.round;
 
@@ -180,7 +180,7 @@ Widget _grayDot() => Container(
   width: 10,
   height: 10,
   decoration: BoxDecoration(
-    color: AppColors.textPrimaryColor,
+    color: AppColors.textSecondaryColor,
     shape: BoxShape.circle,
     border: Border.all(color: Colors.white, width: 1.5),
     boxShadow: [
@@ -197,7 +197,7 @@ Widget _orangeThumb() => Container(
   width: 16,
   height: 16,
   decoration: BoxDecoration(
-    color: AppColors.primaryButtonColor,
+    color: AppColors.accentColor,
     shape: BoxShape.circle,
     border: Border.all(color: Colors.white, width: 2),
     boxShadow: [
@@ -213,5 +213,5 @@ Widget _orangeThumb() => Container(
 const _labelStyle = TextStyle(
   fontSize: 11,
   fontWeight: FontWeight.w400,
-  color: AppColors.textPrimaryColor,
+  color: AppColors.textSecondaryColor,
 );

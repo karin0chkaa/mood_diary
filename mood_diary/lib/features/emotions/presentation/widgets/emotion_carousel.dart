@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
-import 'package:mood_diary/core/emotion/emotion.dart';
-import 'package:mood_diary/presentation/widgets/emotion_card.dart';
+import 'package:mood_diary/features/emotions/domain/emotion.dart';
+import 'package:mood_diary/features/emotions/presentation/widgets/emotion_card.dart';
 
 class EmotionCarousel extends StatelessWidget {
   final Emotion? selectedEmotion;

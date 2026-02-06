@@ -22,7 +22,7 @@ class NotesField extends StatelessWidget {
           width: 335,
           height: 90,
           decoration: BoxDecoration(
-            color: AppColors.textButtonColor,
+            color: AppColors.textOnAccentColor,
             borderRadius: BorderRadius.circular(13),
             boxShadow: [
               BoxShadow(
@@ -40,7 +40,7 @@ class NotesField extends StatelessWidget {
             decoration: InputDecoration(
               hintText: 'Введите заметку',
               hintStyle: const TextStyle(
-                color: AppColors.textPrimaryColor,
+                color: AppColors.textSecondaryColor,
                 fontSize: 14,
               ),
               border: OutlineInputBorder(

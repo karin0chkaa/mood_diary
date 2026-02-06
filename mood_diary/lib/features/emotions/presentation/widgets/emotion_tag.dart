@@ -25,10 +25,10 @@ class EmotionTag extends StatelessWidget {
         height: height,
         alignment: Alignment.center,
         decoration: BoxDecoration(
-          color: isSelected ? AppColors.primaryButtonColor : Colors.white,
+          color: isSelected ? AppColors.accentColor : Colors.white,
           borderRadius: BorderRadius.circular(3),
           border: isSelected
-              ? Border.all(color: AppColors.primaryButtonColor)
+              ? Border.all(color: AppColors.accentColor)
               : Border.all(color: Colors.transparent),
           boxShadow: [
             BoxShadow(
@@ -43,7 +43,7 @@ class EmotionTag extends StatelessWidget {
           style: TextStyle(
             fontSize: 11,
             fontWeight: FontWeight.w400,
-            color: isSelected ? Colors.white : AppColors.textPrimaryColor,
+            color: isSelected ? Colors.white : AppColors.textSecondaryColor,
           ),
         ),
       ),

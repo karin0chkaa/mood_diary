@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:mood_diary/core/constants/app_colors.dart';
 
-class StatisticsContent extends StatelessWidget {
-  const StatisticsContent({super.key});
+class StatisticsScreen extends StatelessWidget {
+  const StatisticsScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class StatisticsContent extends StatelessWidget {
                 'Статистика за неделю',
                 style: Theme.of(context).textTheme.titleLarge?.copyWith(
                   fontWeight: FontWeight.w700,
-                  color: AppColors.textSecondaryColor,
+                  color: AppColors.textPrimaryColor,
                 ),
               ),
             ],

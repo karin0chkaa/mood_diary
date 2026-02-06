@@ -1,4 +1,4 @@
-import 'package:mood_diary/core/emotion/emotion.dart';
+import 'package:mood_diary/features/emotions/domain/emotion.dart';
 
 final Map<Emotion, List<String>> emotionDetailsMap = {
   Emotion.joy: [

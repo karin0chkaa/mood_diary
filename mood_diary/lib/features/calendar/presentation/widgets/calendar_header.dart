@@ -14,18 +14,23 @@ class CalendarHeader extends StatelessWidget implements PreferredSizeWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      backgroundColor: AppColors.primaryBackgroundColor,
+      backgroundColor: AppColors.backgroundColor,
       elevation: 0,
       leading: IconButton(
         onPressed: onClose,
-        icon: const Icon(Icons.close, color: AppColors.textPrimaryColor),
+        icon: const Icon(Icons.close, color: AppColors.textSecondaryColor),
       ),
       actions: [
         TextButton(
           onPressed: onToday,
-          child: Text('Сегодня', style: TextStyle( fontSize: 18,
-    fontWeight: FontWeight.w600,
-    color: AppColors.textPrimaryColor,)),
+          child: const Text(
+            'Сегодня',
+            style: TextStyle(
+              fontSize: 18,
+              fontWeight: FontWeight.w600,
+              color: AppColors.textSecondaryColor,
+            ),
+          ),
         ),
       ],
     );

@@ -2,23 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:mood_diary/core/constants/app_colors.dart';
 
 class AppTheme {
-  static ThemeData lightTheme = ThemeData(
+  static ThemeData light = ThemeData(
     useMaterial3: true,
     brightness: Brightness.light,
     fontFamily: 'Nunito',
 
     colorScheme: ColorScheme.light(
-      primary: AppColors.primaryButtonColor,
-      onPrimary: AppColors.textButtonColor,
+      primary: AppColors.accentColor,
+      onPrimary: AppColors.textOnAccentColor,
 
-      secondary: AppColors.secondaryButtonColor,
+      secondary: AppColors.surfaceColor,
       onSecondary: Colors.black,
 
-      background: AppColors.primaryBackgroundColor,
-      onBackground: AppColors.textSecondaryColor,
+      background: AppColors.backgroundColor,
+      onBackground: AppColors.textPrimaryColor,
 
-      surface: AppColors.primaryBackgroundColor,
-      onSurface: AppColors.textSecondaryColor,
+      surface: AppColors.backgroundColor,
+      onSurface: AppColors.textPrimaryColor,
 
       outline: const Color(0xFFE0DCD7),
       outlineVariant: const Color(0xFFD0C8C0),
@@ -27,25 +27,25 @@ class AppTheme {
       onError: Colors.white,
     ),
 
-    scaffoldBackgroundColor: AppColors.primaryBackgroundColor,
+    scaffoldBackgroundColor: AppColors.backgroundColor,
 
     appBarTheme: AppBarTheme(
-      backgroundColor: AppColors.primaryBackgroundColor,
-      foregroundColor: AppColors.textPrimaryColor,
+      backgroundColor: AppColors.backgroundColor,
+      foregroundColor: AppColors.textSecondaryColor,
       elevation: 0,
       centerTitle: true,
       titleTextStyle: const TextStyle(
         fontFamily: 'Nunito',
         fontSize: 18,
         fontWeight: FontWeight.bold,
-        color: AppColors.textPrimaryColor,
+        color: AppColors.textSecondaryColor,
       ),
     ),
 
     elevatedButtonTheme: ElevatedButtonThemeData(
       style: ElevatedButton.styleFrom(
-        backgroundColor: AppColors.primaryButtonColor,
-        foregroundColor: AppColors.textButtonColor,
+        backgroundColor: AppColors.accentColor,
+        foregroundColor: AppColors.textOnAccentColor,
         elevation: 0,
         shadowColor: Colors.transparent,
         shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(24)),
@@ -58,28 +58,28 @@ class AppTheme {
       headlineMedium: TextStyle(
         fontSize: 20,
         fontWeight: FontWeight.w700,
-        color: AppColors.textSecondaryColor,
+        color: AppColors.textPrimaryColor,
       ),
       titleLarge: TextStyle(
         fontSize: 18,
         fontWeight: FontWeight.w700,
-        color: AppColors.textSecondaryColor,
+        color: AppColors.textPrimaryColor,
       ),
       titleMedium: TextStyle(
         fontSize: 16,
         fontWeight: FontWeight.w800,
-        color: AppColors.textSecondaryColor,
+        color: AppColors.textPrimaryColor,
         letterSpacing: 0.2,
       ),
       bodyMedium: TextStyle(
         fontSize: 14,
         fontWeight: FontWeight.w500,
-        color: AppColors.textSecondaryColor,
+        color: AppColors.textPrimaryColor,
       ),
       bodySmall: TextStyle(
         fontSize: 11,
         fontWeight: FontWeight.w400,
-        color: AppColors.textSecondaryColor,
+        color: AppColors.textPrimaryColor,
       ),
       labelSmall: TextStyle(
         fontSize: 11,
@@ -90,10 +90,10 @@ class AppTheme {
 
     sliderTheme: SliderThemeData(
       trackHeight: 6,
-      activeTrackColor: AppColors.primaryButtonColor,
+      activeTrackColor: AppColors.accentColor,
       inactiveTrackColor: const Color(0xFFEDEDED),
-      thumbColor: AppColors.primaryButtonColor,
-      overlayColor: AppColors.primaryButtonColor.withOpacity(0.2),
+      thumbColor: AppColors.accentColor,
+      overlayColor: AppColors.accentColor.withOpacity(0.2),
       trackShape: const RoundedRectSliderTrackShape(),
       thumbShape: const RoundSliderThumbShape(enabledThumbRadius: 10),
     ),
@@ -113,7 +113,7 @@ class AppTheme {
       focusedBorder: OutlineInputBorder(
         borderRadius: BorderRadius.circular(16),
         borderSide: const BorderSide(
-          color: AppColors.primaryButtonColor,
+          color: AppColors.accentColor,
           width: 2,
         ),
       ),
@@ -131,7 +131,7 @@ class AppTheme {
     ),
     
     iconTheme: const IconThemeData(
-      color: AppColors.textSecondaryColor,
+      color: AppColors.textPrimaryColor,
       size: 24,
     ),
   );
