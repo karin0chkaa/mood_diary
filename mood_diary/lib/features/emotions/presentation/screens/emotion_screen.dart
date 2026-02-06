@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:mood_diary/features/emotions/data/emotion_storage.dart';
 import 'package:mood_diary/features/emotions/domain/emotion.dart';
 import 'package:mood_diary/features/emotions/domain/emotion_details.dart';
+import 'package:mood_diary/features/emotions/domain/emotion_entry.dart';
 import 'package:mood_diary/features/emotions/presentation/widgets/emotion_carousel.dart';
 import 'package:mood_diary/features/emotions/presentation/widgets/emotion_tag.dart';
 import 'package:mood_diary/features/emotions/presentation/widgets/labeled_slider.dart';
 import 'package:mood_diary/features/emotions/presentation/widgets/notes_field.dart';
 import 'package:mood_diary/features/emotions/presentation/widgets/save_button.dart';
+import 'package:provider/provider.dart';
 
 class EmotionScreen extends StatefulWidget {
   const EmotionScreen({super.key});
@@ -140,23 +143,31 @@ class _EmotionScreenContent extends State<EmotionScreen> {
                 child: SaveButton(
                   isEnable: _isFormValid,
                   onPressed: () {
+                    final storage = context.read<EmotionStorage>();
+
+                    storage.save(
+                      EmotionEntry(
+                        date: DateTime.now(),
+                        emotion: _selectedEmotion!,
+                        details: _selectedDetails.toList(),
+                        stress: _stressLevel,
+                        selfEsteem: _selfEsteem,
+                        note: notesController.text,
+                      ),
+                    );
+
                     showDialog(
                       context: context,
-                      builder: (context) {
-                        return AlertDialog(
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20),
+                      builder: (_) => AlertDialog(
+                        title: const Text('Готово'),
+                        content: const Text('Анкета сохранена'),
+                        actions: [
+                          TextButton(
+                            onPressed: () => Navigator.pop(context),
+                            child: const Text('Ок'),
                           ),
-                          title: const Text('Готово'),
-                          content: const Text('Анкета успешно сохранена'),
-                          actions: [
-                            TextButton(
-                              onPressed: () => Navigator.pop(context),
-                              child: const Text('Ок'),
-                            ),
-                          ],
-                        );
-                      },
+                        ],
+                      ),
                     );
                   },
                 ),

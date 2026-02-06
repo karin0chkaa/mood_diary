@@ -126,20 +126,23 @@ class CalendarMonthView extends StatelessWidget {
               ),
               calendarBuilders: CalendarBuilders(
                 markerBuilder: (context, date, events) {
-                  if (datesWithMood.any((d) => isSameDay(d, date))) {
-                    return Positioned(
-                      bottom: isCompact ? 1 : 4,
+                  final hasMood = datesWithMood.any((d) => isSameDay(d, date));
+                  if (!hasMood) return null;
+
+                  return Align(
+                    alignment: Alignment.bottomCenter,
+                    child: Padding(
+                      padding: EdgeInsets.only(bottom: twoColumns ? 1 : 4),
                       child: Container(
-                        width: isCompact ? 4 : 6,
-                        height: isCompact ? 4 : 6,
+                        width: twoColumns ? 4 : 6,
+                        height: twoColumns ? 4 : 6,
                         decoration: const BoxDecoration(
                           color: AppColors.accentColor,
                           shape: BoxShape.circle,
                         ),
                       ),
-                    );
-                  }
-                  return null;
+                    ),
+                  );
                 },
               ),
             ),

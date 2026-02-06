@@ -20,6 +20,13 @@ class StatisticsScreen extends StatelessWidget {
                   color: AppColors.textPrimaryColor,
                 ),
               ),
+              const SizedBox(height: 16),
+              Text(
+                'Здесь будет отображаться статистика настроения.',
+                style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                  color: AppColors.textPrimaryColor.withOpacity(0.6),
+                ),
+              ),
             ],
           ),
         ),
