@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:mood_diary/features/calendar/presentation/screens/calendar_screen.dart';
 import 'package:mood_diary/features/emotions/presentation/screens/emotion_screen.dart';
-import 'package:mood_diary/features/shell/presentation/widgets/home_app_bar.dart';
+import 'package:mood_diary/features/home_screen/presentation/widgets/home_app_bar.dart';
 import 'package:mood_diary/features/statistics/presentation/statistics_screen.dart';
 
 class HomeScreen extends StatefulWidget {

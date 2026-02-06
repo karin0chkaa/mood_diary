@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:mood_diary/features/shell/presentation/widgets/date_title.dart';
-import 'package:mood_diary/features/shell/presentation/widgets/home_tabs.dart';
+import 'package:mood_diary/features/home_screen/presentation/widgets/date_title.dart';
+import 'package:mood_diary/features/home_screen/presentation/widgets/home_tabs.dart';
 
 class HomeAppBar extends StatelessWidget implements PreferredSizeWidget {
   final VoidCallback onCalendarTap;
